@@ -1,18 +1,19 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-const courseList = ['react', 'nextjs', 'node'];
+const courseList = ['HTML', 'CSS', 'JavaScript', 'Node.js' ,'Express', 'Next.js'];
 
-export default function CoursesPage() {
-  return (
-    <div>
-      <h1 className="border border-purple-600 text-fuchsia-400 text-center p-3">Lista de Cursos</h1>
-      <ul className='text-amber-500'>
-        {courseList.map(course => (
-          <li key={course}>
-            <Link href={`/courses/${course}`}>{course}</Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+export default function CoursesPage(){
+    return (
+        <div>
+            <p className="mb-5">Lista de cursos</p>
+            <ul>
+                {courseList.map(course =>(
+                    <li key={course}>
+                        <Link href={`/courses/${course}`}> {course} </Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
+
 }

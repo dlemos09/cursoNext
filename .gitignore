@@ -43,3 +43,5 @@ coverage/
 .next/cache/
 
 anotações.txt
+
+*.json

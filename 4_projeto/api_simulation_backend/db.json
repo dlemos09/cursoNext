@@ -1,0 +1,19 @@
+{
+  "tasks": [
+    {
+      "title": "Roteiro",
+      "description": "Será criada um roteiro de aula para os alunos seguirem durante a aula",
+      "id": "030f"
+    },
+    {
+      "title": "Excel",
+      "description": "Montar aula de excel para os alunos para este sábado 07/06/2025",
+      "id": "a27d"
+    },
+    {
+      "id": "ba13",
+      "title": "Tarefa",
+      "description": "Tarefa exemplo\n"
+    }
+  ]
+}

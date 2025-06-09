@@ -23,7 +23,7 @@ export default function PokemonPage() {
         const data = await res.json();
         setPokemon(data);
         setErro(null);
-        setNome(""); // clear input
+        setNome("");
       }
     } catch (err) {
       console.error(err);
@@ -35,40 +35,55 @@ export default function PokemonPage() {
   };
 
   return (
-    <main style={{ padding: "2rem" }}>
-      <h1>Buscar Pokémon</h1>
+    <main className="min-h-screen bg-rose-500 flex flex-col items-center justify-start p-6 font-sans text-white">
+      <h1 className="text-4xl font-bold mb-6 text-yellow-300 drop-shadow-md">
+        Pokédex
+      </h1>
 
-      <input
-        type="text"
-        placeholder="Digite o nome (ex: pikachu)"
-        value={nome}
-        onChange={(e) => setNome(e.target.value)}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter') buscarPokemon();
-        }}
-        style={{ padding: "0.5rem", marginRight: "1rem" }}
-      />
-      <button onClick={buscarPokemon} style={{ padding: "0.5rem" }}>
-        Buscar
-      </button>
+      <div className="flex gap-2 mb-4">
+        <input
+          type="text"
+          placeholder="Digite o nome (ex: pikachu)"
+          value={nome}
+          onChange={(e) => setNome(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') buscarPokemon();
+          }}
+          className="p-2 rounded-lg border-2 border-yellow-300 text-black focus:outline-none focus:ring-2 focus:ring-yellow-400"
+        />
+        <button
+          onClick={buscarPokemon}
+          className="bg-yellow-300 text-red-800 font-semibold px-4 py-2 rounded-lg hover:bg-yellow-400 transition"
+        >
+          Buscar
+        </button>
+      </div>
 
-      {loading && <p>Carregando...</p>}
-      {erro && <p style={{ color: "red" }}>{erro}</p>}
+      {loading && <p className="text-white font-semibold">Carregando...</p>}
+      {erro && <p className="text-red-200 font-semibold">{erro}</p>}
 
       {pokemon && (
-        <div style={{ marginTop: "1rem" }}>
-          <h2>{pokemon.name.toUpperCase()}</h2>
-          <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-          <p>
-            <strong>Altura:</strong> {pokemon.height}
-          </p>
-          <p>
-            <strong>Peso:</strong> {pokemon.weight}
-          </p>
-          <p>
-            <strong>Tipos:</strong>{" "}
-            {pokemon.types.map((t) => t.type.name).join(", ")}
-          </p>
+        <div className="bg-white text-black rounded-xl shadow-xl p-6 mt-6 w-80 flex flex-col items-center border-4 border-yellow-300">
+          <h2 className="text-2xl font-bold mb-2 text-red-600 uppercase">
+            {pokemon.name}
+          </h2>
+          <img
+            src={pokemon.sprites.front_default}
+            alt={pokemon.name}
+            className="w-32 h-32"
+          />
+          <div className="mt-4 text-sm space-y-1">
+            <p>
+              <strong>Altura:</strong> {pokemon.height / 10} m
+            </p>
+            <p>
+              <strong>Peso:</strong> {pokemon.weight / 10} kg
+            </p>
+            <p>
+              <strong>Tipos:</strong>{" "}
+              {pokemon.types.map((t) => t.type.name).join(", ")}
+            </p>
+          </div>
         </div>
       )}
     </main>

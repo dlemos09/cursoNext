@@ -1,11 +1,6 @@
 {
   "tasks": [
     {
-      "title": "Excel",
-      "description": "Montar aula de excel para os alunos para este sábado 07/06/2025",
-      "id": "a27d"
-    },
-    {
       "title": "Tarefa",
       "description": "Macaíba \n",
       "id": "ba13"
@@ -14,6 +9,11 @@
       "id": "653f",
       "title": "Estudar excel ",
       "description": "Estudar excel para sábado"
+    },
+    {
+      "id": "76a0",
+      "title": "Remedio",
+      "description": "Comprar remedio"
     }
   ]
 }

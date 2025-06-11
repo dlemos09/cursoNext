@@ -20,7 +20,7 @@ const Header = () => {
                             href="/todos/create"
                             className="text-white font-semibold hover:text-blue-200 transition-colors"
                         >
-                            Tarefas
+                            Criar
                         </a>
                     </li>
                    

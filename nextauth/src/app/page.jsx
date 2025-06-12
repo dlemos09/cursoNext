@@ -15,7 +15,7 @@ export default function Home() {
           <button
             type="submit"
             className="bg-violet-950 text-white rounded-md p-2 hover:bg-violet-700 transition-colors cursor-pointer"
-            onClick={() => signIn("github", { callbackUrl: "/dashboard" })}
+            onClick={() => signIn("github", { callbackUrl: "/dashboard", prompt: "login" })}
           >
             Entrar com GitHub
           </button>

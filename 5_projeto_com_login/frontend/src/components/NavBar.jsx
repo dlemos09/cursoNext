@@ -6,7 +6,7 @@ const NavBar = () => {
   return (
     <nav>
       <div className="flex justify-between fixed w-full items-center p-4 bg-white shadow-md">
-        <h1 className="text-2xl font-bold text-gray-800">Conecta App</h1>
+        <img src="/conectaLogo.png" alt="Logo do aplicativo" className="w-48" />
         <div className="flex space-x-4">
           <Link href="/tasks" className="text-gray-600 hover:text-gray-800">
             Tarefas
